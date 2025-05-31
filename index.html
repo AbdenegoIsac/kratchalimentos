@@ -1,1 +1,100 @@
-
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kratch Alimentos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: none;
+        }
+        .active {
+            display: block;
+        }
+        nav {
+            background-color: #343a40;
+            color: white;
+            padding: 15px;
+        }
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a onclick="mostrarTela('home')">Início</a>
+        <a onclick="mostrarTela('produtos')">Produtos</a>
+        <a onclick="mostrarTela('pagamento')">Pagamento</a>
+        <a onclick="mostrarTela('acompanhamento')">Acompanhar Pedido</a>
+        <a onclick="mostrarTela('contato')">Contato</a>
+    </nav>
+    
+    <div class="container active" id="home">
+        <h1>Bem-vindo à Kratch</h1>
+        <p>Sua melhor opção de lasanhas artesanais.</p>
+        <button onclick="mostrarMensagem()">Saiba Mais</button>
+    </div>
+    
+    <div class="container" id="produtos">
+        <h2>Produtos</h2>
+        <p>Confira nossas opções de lasanhas deliciosas.</p>
+        <button onclick="mostrarTela('pagamento')">Fazer Pedido</button>
+    </div>
+    
+    <div class="container" id="pagamento">
+        <h2>Pagamento</h2>
+        <p>Escolha sua forma de pagamento: Pix ou Cartão.</p>
+        <button onclick="mostrarTela('acompanhamento')">Confirmar Pagamento</button>
+    </div>
+    
+    <div class="container" id="acompanhamento">
+        <h2>Acompanhamento do Pedido</h2>
+        <p>Seu pedido está sendo preparado!</p>
+    </div>
+    
+    <div class="container" id="contato">
+        <h2>Contato</h2>
+        <p>Entre em contato pelo WhatsApp: 55 47 99708-5463</p>
+    </div>
+    
+    <script>
+        function mostrarTela(tela) {
+            document.querySelectorAll(".container").forEach(div => div.classList.remove("active"));
+            document.getElementById(tela).classList.add("active");
+        }
+        function mostrarMensagem() {
+            alert("Lasanhas artesanais feitas com ingredientes selecionados! Instagram: @kratchalimentos whatsapp: 55 47 99708-5463");
+        }
+    </script>
+</body>
+</html>
